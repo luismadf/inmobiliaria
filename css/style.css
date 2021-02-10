@@ -131,7 +131,7 @@ main .container {
   max-width: 1200px;
   margin: 40px auto;
 }
-.casas-container .our-houses {
+.our-houses {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,4 +261,78 @@ main .container {
   font-weight: bold;
   padding: 12px;
   margin-top: 20px;
+}
+
+.container-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.title-section .our-houses h3 {
+  font-size: 16px;
+  color: var(--color-naranja);
+}
+.title-section p {
+  font-size: 30px;
+  width: 40%;
+  margin: 20px 0;
+}
+
+.option-one {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin: 50px 0;
+}
+
+.option-one i {
+  font-size: 50px;
+  margin-right: 40px;
+}
+.option-two {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin: 50px 0;
+}
+
+.option-two i {
+  font-size: 50px;
+  margin-left: 40px;
+}
+.option-three {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  font-size: 16px;
+  color: gray;
+  margin: 50px 0;
+}
+
+.option-three i {
+  font-size: 50px;
+  margin-right: 40px;
+}
+
+footer {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(247, 147, 26, 0.19371498599439774) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+footer p {
+  color: #0e0651;
 }
