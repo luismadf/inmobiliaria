@@ -148,7 +148,12 @@ main .container {
   color: var(--color-naranja);
 }
 
-.casas-container p {
+.our-houses-filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.casas-container .our-houses-filter p {
   font-size: 30px;
   width: 40%;
   margin: 20px 0;
@@ -324,13 +329,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(2, 0, 36);
+  /*   background: rgb(2, 0, 36);
   background: linear-gradient(
     0deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(247, 147, 26, 0.19371498599439774) 0%,
     rgba(255, 255, 255, 1) 100%
-  );
+  ); */
+  background-color: rgba(247, 147, 26, 0.2);
 }
 
 footer p {

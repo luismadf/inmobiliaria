@@ -1,39 +1,53 @@
-const casasSlider = document.querySelector(".casas-slider");
+const resultado = document.querySelector(".casas-slider");
+const minimo = document.querySelector("#min-filter");
+const maximo = document.querySelector("#max-filter");
+const estado = document.querySelector("#state-filter");
 
-let casasDB = [
-  {
-    nombre: "Casa en el Campo",
-    ubicacion: "Ohio, U.S.A.",
-    banos: 3,
-    habitaciones: 2,
-    cochera: 2,
-    precio: 50.0,
-    imagen: "casa1.jpg",
-  },
-  {
-    nombre: "Casa en la Ciudad",
-    ubicacion: "Washington, U.S.A.",
-    banos: 3,
-    habitaciones: 2,
-    cochera: 2,
-    precio: 50.0,
-    imagen: "casa2.jpg",
-  },
-  {
-    nombre: "Casa en la Ciudad",
-    ubicacion: "New York, U.S.A.",
-    banos: 3,
-    habitaciones: 2,
-    cochera: 2,
-    precio: 50.0,
-    imagen: "casa3.jpg",
-  },
-];
+const datosBusqueda = {
+  estado: "",
+  minimo: "",
+  maximo: "",
+};
 
-mostrarCasas();
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarCasas(casasDB);
+  llenarSelect();
+});
+minimo.addEventListener("change", (e) => {
+  datosBusqueda.minimo = e.target.value;
+  filtrarCasas();
+});
+maximo.addEventListener("change", (e) => {
+  datosBusqueda.maximo = e.target.value;
+  filtrarCasas();
+});
+estado.addEventListener("change", (e) => {
+  datosBusqueda.estado = e.target.value;
+  filtrarCasas();
+});
 
-function mostrarCasas() {
-  casasDB.forEach((casa) => {
+function llenarSelect() {
+  for (let i = 0; i < casasDB.length; i++) {
+    const option = document.createElement("option");
+    option.value = casasDB[i].ubicacion;
+    option.textContent = casasDB[i].ubicacion;
+    estado.appendChild(option);
+  }
+}
+
+function limpiarHTML() {
+  while (resultado.firstChild) {
+    resultado.removeChild(resultado.firstChild);
+  }
+}
+
+function filtrarCasas() {
+  console.log(datosBusqueda);
+}
+
+function mostrarCasas(casas) {
+  limpiarHTML();
+  casas.forEach((casa) => {
     const {
       nombre,
       ubicacion,
@@ -53,7 +67,7 @@ function mostrarCasas() {
     <p class="titulo">${nombre}</p>
     <div class="ubicacion-container">
       <div class="ubicacion">
-        <p>${ubicacion}</p>
+        <p>${ubicacion}, U.S.A.</p>
       </div>
       <div class="precio">
         <p>$50.000</p>
@@ -69,6 +83,22 @@ function mostrarCasas() {
     <a href="#" class="boton-ver-mas">Más Información</a>
   </div>
     `;
-    casasSlider.appendChild(div);
+    resultado.appendChild(div);
   });
+}
+
+function filtrarCasas() {
+  const resultado = casasDB.filter(filtrarEstado);
+  if (resultado.length) {
+    mostrarCasas(resultado);
+  }
+  console.log(resultado);
+}
+
+function filtrarEstado(casa) {
+  const { estado } = datosBusqueda;
+  if (estado) {
+    return casa.ubicacion === estado;
+  }
+  return casa;
 }

@@ -49,10 +49,33 @@
           <div class="our-houses">
             <h3>Nuestras Casas.</h3>
           </div>
-          <p>
-            Las mejores casas a tu alcance, para que vivas la vida de tus
-            sueños.
-          </p>
+          <div class="our-houses-filter">
+            <p>
+              Las mejores casas a tu alcance, para que vivas la vida de tus
+              sueños.
+            </p>
+            <form>
+              <select name="" id="state-filter">
+                <option value="" selected>Todas</option>
+              </select>
+              <select name="" id="min-filter">
+                <option value="50000">50.000</option>
+                <option value="100000">100.000</option>
+                <option value="200000">200.000</option>
+                <option value="300000">300.000</option>
+                <option value="400000">400.000</option>
+                <option value="500000">500.000</option>
+              </select>
+              <select name="" id="max-filter">
+                <option value="50000">50.000</option>
+                <option value="100000">100.000</option>
+                <option value="200000">200.000</option>
+                <option value="300000">300.000</option>
+                <option value="400000">400.000</option>
+                <option value="500000">500.000</option>
+              </select>
+            </form>
+          </div>
         </div>
         <div class="casas-slider"></div>
         <section>
@@ -98,6 +121,7 @@
         </footer>
       </div>
     </main>
+    <script src="./js/db.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
